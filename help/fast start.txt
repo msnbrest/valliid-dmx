@@ -1,0 +1,31 @@
+-- install --
+
+$ sudo apt install cmake & gcc # install minimum
+$ sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib # or install ALL
+
+$ cd _where_you_want_sdk_
+$ git clone https://github.com/raspberrypi/pico-sdk.git # get SDK
+
+-- init projet --
+
+copy external/pico_sdk_import.cmake from the SDK into your project directory
+
+$ export PICO_SDK_PATH=/xxx/xxx/sdk_folder/pico-sdk # define sdk projet
+
+-- init (part 2) --
+
+$ cd _projet_folder_
+
+$ mkdir build
+
+$ cd build
+
+$ cmake ..
+
+-- compil & send to rpi --
+
+$ make _projet_name_ # compil
+
+// press rpi button & plug to USB
+
+// move build/file.uf2 to rpi
