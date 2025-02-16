@@ -1,0 +1,13 @@
+#-- install pico --
+# create abs_user_rpi_folder/sdk folder
+git clone https://github.com/raspberrypi/pico-sdk.git --branch master
+cd pico-sdk/
+git submodule update --init
+//sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential//ou ptet que cmake gcc
+# export PICO_SDK_PATH=/home/msnbrest/Logiciels/rpi/sdk/pico-sdk
+# create abs_user_rpi_folder/projects/myproject folder
+paste 'pico_sdk_import.cmake'
+# mkdir build; cd build;
+cmake .. # regenerate base
+make valliid-dmx-usb # build
+#-- end install pico
